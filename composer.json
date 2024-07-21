@@ -125,7 +125,8 @@
             "library/translation.inc.php"
         ],
         "psr-4": {
-            "OpenEMR\\": "src"
+            "OpenEMR\\": "src",
+            "OpenEMR\\Modules\\HealthplusPeriscope\\": "interface/modules/custom_modules/oe-module-healthplus-periscope/src/"
         }
     },
     "autoload-dev": {

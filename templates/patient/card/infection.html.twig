@@ -1,0 +1,27 @@
+{% extends "patient/card/card_base.html.twig" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12"><p>Days since surgery (15-03-2023)      +15 days</p></div>
+    </div>
+    <div class="row">
+        <div class="col-4"><p class="small">Interval</p></div>
+        <div class="col-4"><p class="small">Probability</p></div>
+        <div class="col-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-4"><p class="small"><strong>7</strong> day prediction</p></div>
+        <div class="col-4"><p class="small"><strong><span style="color: green;">LOW</span> 2%</strong> <span style="color: green;">&#x2B24;</span></p></div>
+        <div class="col-4"><p class="small">Date of prediction 15-03-2023</p></div>
+    </div>
+    <div class="row">
+        <div class="col-4"><p class="small"><strong>30</strong> day prediction</p></div>
+        <div class="col-4"><p class="small"><strong><span style="color: orange;">MEDIUM</span> 5%</strong> <span style="color: orange;">&#x2B24;</span></p></div>
+        <div class="col-4"><p class="small">Date of prediction 15-03-2023</p></div>
+    </div>  
+    <div class="row">
+        <div class="col-12"><p><a href="/interface/modules/custom_modules/oe-module-healthplus-periscope/public/dashboard.php">More details</a></p></div>
+    </div>          
+</div>
+{% endblock %}

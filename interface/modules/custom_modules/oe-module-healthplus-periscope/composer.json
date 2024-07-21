@@ -1,0 +1,27 @@
+{
+  "name": "healthplus/oe-module-healthplus-periscope",
+  "description": "OpenEMR Module for PERISCOPE infection intelligence",
+  "type": "openemr-module",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Bart Steverink",
+      "email": "bart.steverink@healthplus.ai",
+      "role": "CTO"
+    }
+  ],
+  "keywords": ["openemr", "openemr-module"],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {"OpenEMR\\Modules\\HealthplusPeriscope\\": "src/"}
+  },
+  "require": {
+    "openemr/oe-module-installer-plugin": "^0.1.0",
+    "php": ">= 7.4",
+    "symfony/event-dispatcher": "^4.4.0",
+    "nyholm/psr7": "^1.4"
+  },
+  "conflict": {
+    "openemr/openemr": "<6.0.0"
+  }
+}

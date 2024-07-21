@@ -1015,7 +1015,7 @@ $oemr_ui = new OemrUI($arrOeUiSettings);
                 $pl = (AclMain::aclCheckIssue('medical_problem') ? 1 : 0) && !in_array('card_medicalproblems', $hiddenCards) ? 1 : 0;
                 $meds = (AclMain::aclCheckIssue('medication') ? 1 : 0) && !in_array('card_medication', $hiddenCards) ? 1 : 0;
                 $rx = !$GLOBALS['disable_prescriptions'] && AclMain::aclCheckCore('patients', 'rx') && !in_array('card_prescriptions', $hiddenCards) ? 1 : 0;
-                $cards = max(1, ($allergy + $pl + $meds));
+                $cards = 4; // max(1, ($allergy + $pl + $meds));
                 $col = "p-1 ";
                 $colInt = 12 / $cards;
                 $col .= "col-md-" . $colInt;
@@ -1032,6 +1032,25 @@ $oemr_ui = new OemrUI($arrOeUiSettings);
                         return ($_i['outcome'] != 1) && (empty($_i['enddate']) || (strtotime($_i['enddate']) > strtotime('now')));
                     });
                 }
+
+                // PERISCOPE CARD
+                if (1 === 1) {
+                    $id = 'periscope_ps_expand';
+                    $viewArgs = [
+                        'title' => xl('Postoperative infection - PERISCOPE'),
+                        'card_container_class_list' => ['flex-fill', 'mx-1', 'card'],
+                        'id' => $id,
+                        'forceAlwaysOpen' => false,
+                        'initiallyCollapsed' => false,
+                        'linkMethod' => "javascript",
+                        'auth' => true,
+                        'btnLabel' => 'Edit',
+                        'pid' => $pid
+                    ];
+                    echo "<div class=\"$col\">";
+                    echo $t->render('patient/card/infection.html.twig', $viewArgs);
+                    echo "</div>";
+                }                
 
                 // ALLERGY CARD
                 if ($allergy === 1) {
